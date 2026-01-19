@@ -1,5 +1,6 @@
 #include <iostream>
 #include <vector>
+#include <cctype>
 #include <map>
 #include <string>
 #include <sstream>
@@ -7,6 +8,7 @@
 #include <fstream>
 #include <filesystem> // C++17及以上支持
 #include <windows.h>  
+#include <limits>
 
 // 基础颜色定义（兼容Windows/Linux/macOS）
 #define COLOR_RESET "\033[0m"   // 重置颜色
@@ -413,7 +415,7 @@ int main()
 {
     // 1. 初始化配置和读取弈子
     std::vector<TraitConfig> allTraitConfigs = initTraitConfigs();
-    std::string filePath = "../Trait_information/tft_champions_trait.txt";
+    std::string filePath = "../Trait_information/tft_champions_trait_UTF8.txt";
     std::vector<Champion> allChampions = readChampionsFromFile(filePath);
     if (allChampions.empty())
     {
