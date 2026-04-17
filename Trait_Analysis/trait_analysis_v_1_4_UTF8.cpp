@@ -427,10 +427,10 @@ int main()
     while (keep_running)
     {
         // 2. 输入人口数
-        int population;
-        std::cout << "\n请输入阵容人口数：";
-        std::cin >> population;
-        std::cin.ignore();
+        int population = 0;
+        //std::cout << "\n请输入阵容人口数：";
+        //std::cin >> population;
+        //std::cin.ignore();
 
         // 3. 输入弈子名称
         std::string championInput;
@@ -445,6 +445,7 @@ int main()
 
         while (ss >> name)
         {
+            population++;
             std::string realName;
             const Champion *champ = findChampionByAnyName(allChampions, name, realName);
             if (champ != nullptr)
@@ -471,6 +472,7 @@ int main()
                 std::cerr << "警告：未找到弈子[" << name << "]的信息，已忽略！" << std::endl;
             }
         }
+        std::cout << "总共输入了 " << population << " 个单词" << std::endl;
 
         // 5. 彩色输出阵容弈子
         std::cout << "\n===== 阵容弈子列表 =====" << std::endl;

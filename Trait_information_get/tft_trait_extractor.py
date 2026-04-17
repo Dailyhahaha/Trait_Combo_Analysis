@@ -154,7 +154,7 @@ def crawl_tft_champions_trait():
 
     # ========== 保存JSON文件（原有功能） ==========
     driver.quit()
-    with open("../Trait_information/tft_champions_trait.json", "w", encoding="utf-8") as f:
+    with open("../Trait_information/tft_S17_champions_trait.json", "w", encoding="utf-8") as f:
         json.dump(tft_champions, f, ensure_ascii=False, indent=2)
     
     # ========== 新增：处理数据并保存到TXT文件 ==========
@@ -171,7 +171,7 @@ def crawl_tft_champions_trait():
         txt_content.append(line)
     
     # 2. 保存到TXT文件（UTF-8编码避免中文乱码）
-    with open("../Trait_information/tft_champions_trait.txt", "w", encoding="utf-8") as f:
+    with open("../Trait_information/tft_S17_champions_trait.txt", "w", encoding="utf-8") as f:
         # 每行一个弈子，换行符分隔
         f.write("\n".join(txt_content))
     
